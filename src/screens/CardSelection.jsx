@@ -56,20 +56,20 @@ export default function CardSelection({ partnerAName, partnerBName, onContinue }
     <>
       <Header title="Pick Your Cards" />
       <ScreenContainer>
-        <div className="bg-white rounded-xl shadow-sm p-4 sm:p-6 md:p-8 lg:p-10">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#282a3e] mb-3 sm:mb-4 text-center">
+        <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 animate-slide-up border border-gray-100">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#282a3e] mb-3 text-center">
             Who Goes First?
           </h2>
-          <p className="text-gray-600 text-center mb-4 sm:mb-6 md:mb-8 text-xs sm:text-sm">
+          <p className="text-sm text-gray-600 text-center mb-6 leading-relaxed">
             Pick random cards — higher card starts!
           </p>
 
-          <div className="bg-[#f1e4e8] rounded-xl p-4 sm:p-5 md:p-6 mb-4 sm:mb-6">
-            <p className="text-xs sm:text-sm text-[#282a3e] mb-4 sm:mb-6 text-center leading-relaxed px-2">
+          <div className="bg-gradient-to-br from-[#f1e4e8] to-[#f8f2f5] rounded-xl p-5 sm:p-6 mb-6 border border-[#ef6461]/30 shadow-sm">
+            <p className="text-sm text-[#282a3e] mb-6 text-center leading-relaxed">
               <strong>Decide who would go first.</strong> A fun way to decide could be by picking a card from a deck of playing cards. Whoever gets a higher number card goes first!
             </p>
             
-            <div className="flex justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 mb-4 sm:mb-6 flex-wrap items-center">
+            <div className="flex justify-center gap-4 sm:gap-6 md:gap-8 mb-6 flex-wrap items-center">
               {/* Partner A Card */}
               <div className="flex flex-col items-center w-full sm:w-auto">
                 {cardA ? (
@@ -100,7 +100,7 @@ export default function CardSelection({ partnerAName, partnerBName, onContinue }
                     <span className="text-4xl sm:text-5xl text-gray-500">?</span>
                   </div>
                 )}
-                <p className="text-sm sm:text-base font-semibold text-[#282a3e] mt-2 sm:mt-3 md:mt-4 text-center break-words max-w-[120px] sm:max-w-none">{partnerAName}</p>
+                <p className="text-sm font-semibold text-[#282a3e] mt-3 text-center break-words">{partnerAName}</p>
               </div>
 
               {/* VS */}
@@ -140,7 +140,7 @@ export default function CardSelection({ partnerAName, partnerBName, onContinue }
                     <span className="text-4xl sm:text-5xl text-gray-500">?</span>
                   </div>
                 )}
-                <p className="text-sm sm:text-base font-semibold text-[#282a3e] mt-2 sm:mt-3 md:mt-4 text-center break-words max-w-[120px] sm:max-w-none">{partnerBName}</p>
+                <p className="text-sm font-semibold text-[#282a3e] mt-3 text-center break-words">{partnerBName}</p>
               </div>
             </div>
 
@@ -153,18 +153,18 @@ export default function CardSelection({ partnerAName, partnerBName, onContinue }
             )}
 
             {showResult && (
-              <div className="bg-white rounded-xl p-4 sm:p-5 md:p-6 border-2 border-[#ef6461] shadow-lg">
-                <div className="text-center mb-4 sm:mb-5">
-                  <div className="bg-[#f1e4e8] rounded-lg p-3 sm:p-4 mb-3 sm:mb-4">
-                    <p className="text-sm sm:text-base font-semibold text-[#282a3e] mb-2 break-words">
-                      {partnerAName}&apos;s card: <span className="text-[#ef6461] font-bold text-base sm:text-lg">Card #{getCardName(cardA)}</span>
+              <div className="bg-white rounded-xl p-5 sm:p-6 border-2 border-[#ef6461] shadow-lg">
+                <div className="text-center mb-5">
+                  <div className="bg-gradient-to-br from-[#f1e4e8] to-[#f8f2f5] rounded-lg p-4 mb-4 border border-[#ef6461]/30">
+                    <p className="text-sm font-semibold text-[#282a3e] mb-2 break-words">
+                      {partnerAName}&apos;s card: <span className="text-[#ef6461] font-bold text-base">Card #{getCardName(cardA)}</span>
                     </p>
-                    <p className="text-sm sm:text-base font-semibold text-[#282a3e] break-words">
-                      {partnerBName}&apos;s card: <span className="text-[#ef6461] font-bold text-base sm:text-lg">Card #{getCardName(cardB)}</span>
+                    <p className="text-sm font-semibold text-[#282a3e] break-words">
+                      {partnerBName}&apos;s card: <span className="text-[#ef6461] font-bold text-base">Card #{getCardName(cardB)}</span>
                     </p>
                   </div>
-                  <div className="bg-gradient-to-r from-[#ef6461] to-[#e04d4a] rounded-lg p-3 sm:p-4 mb-3 sm:mb-4">
-                    <p className="text-lg sm:text-xl md:text-2xl font-bold text-white break-words px-2">
+                  <div className="bg-gradient-to-r from-[#ef6461] to-[#e04d4a] rounded-lg p-4 mb-4">
+                    <p className="text-base sm:text-lg font-bold text-white break-words">
                       {cardA > cardB 
                         ? `🎯 ${partnerAName} goes first!` 
                         : `🎯 ${partnerBName} goes first!`}
@@ -173,7 +173,7 @@ export default function CardSelection({ partnerAName, partnerBName, onContinue }
                 </div>
                 <PrimaryButton 
                   onClick={handleContinue} 
-                  className="w-full text-sm sm:text-base py-2.5 sm:py-3"
+                  className="w-full text-base py-3"
                 >
                   Begin Exercise
                 </PrimaryButton>
