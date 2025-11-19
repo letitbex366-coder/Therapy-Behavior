@@ -33,7 +33,7 @@ export default function GuessRound({ guessingPartner, receivingPartner, onComple
     <>
       <Header title={`${guessingPartner} Guessing`} />
       <ScreenContainer>
-        <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 animate-slide-up border border-gray-100">
+        <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 animate-slide-up border border-gray-100 max-w-2xl mx-auto">
           <div className="mb-6">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#282a3e] mb-3 text-center break-words leading-tight">
               {guessingPartner} guessing for {receivingPartner}
